@@ -68,7 +68,7 @@ for iRe = 1:size(Re)
                         %% NUMERICAL PARAMETERS
                         
                         % NUMBER OF SIMULATED PERIODS
-                        NPs = 10;
+                        NPs = 0;
                         % NUMBER OF TIME STEPS PER PERIOD
                         NTSPP = 100;
                         % TIME STEP CALCULATION (IN SECONDS)
