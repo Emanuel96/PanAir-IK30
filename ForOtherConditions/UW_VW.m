@@ -1,4 +1,4 @@
-function [UW,VW] = UW_VW(AXW_J,AYW_J,q,BXW_J,BYW_J,TAU,V_INF,NM,CXW_M,CYW_M,CV,~)
+function [UW,VW] = UW_VW(AXW_J,AYW_J,q,BXW_J,BYW_J,TAU,V_INF,NM,CXW_M,CYW_M,CV)
 
     term1 = sum(AXW_J.*q');
     term2 = TAU*sum(BXW_J);
