@@ -9,7 +9,12 @@
 
 %% FORCES FILE
 
-fid_force = fopen(strcat(folder_name,'/',condition,'_forces.dat'),'w');
+if motion == 1
+    fid_force = fopen(strcat(folder_name,'/',condition,'_forces_plunging.dat'),'w');
+elseif motion == 2
+    fid_force = fopen(strcat(folder_name,'/',condition,'_forces_pitching.dat'),'w');
+end
+
 %fprintf(fid_force,'t y_dot alpha_eff CD CL CM CPP CPR\n');
 fprintf(fid_force,'t y_dot alpha_eff CD CL CM\n');
 %for k = NTS-NTSPP:NTS % PRINT ONLY LAST PERIOD

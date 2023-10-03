@@ -2,8 +2,8 @@ clear clc
 
 %% CONDITIONS
 
-file = 'Results/Re_60000/pitching.dat';
-file1 = 'Results/Re_60000/plunging.dat';
+file = 'Results/Re_10000/Re_10000_forces_pitching.dat';
+file1 = 'Results/Re_10000/Re_10000_forces_plunging.dat';
 
 result = importdata(file);
 result1 = importdata(file1);
@@ -14,10 +14,11 @@ lift = result.data(:,5);
 moment = result.data(:,6);
 
 alpha_eff1 = result1.data(:,3);
-%drag1 = result1.data(:,5).*sind(alpha_eff1)+result1.data(:,4).*cosd(alpha_eff1);
-%lift1 = result1.data(:,5).*cosd(alpha_eff1)-result1.data(:,4).*sind(alpha_eff1);
-drag1 = result1.data(:,4);
-lift1 = result1.data(:,5);
+
+drag1 = result1.data(:,5).*sind(alpha_eff1)+result1.data(:,4).*cosd(alpha_eff1);
+lift1 = result1.data(:,5).*cosd(alpha_eff1)-result1.data(:,4).*sind(alpha_eff1);
+%drag1 = result1.data(:,4);
+%lift1 = result1.data(:,5);
 moment1 = result1.data(:,6);
 
 subplot(1,3,1)
