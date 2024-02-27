@@ -59,6 +59,8 @@ for iRe = 1:size(Re)
                             simulation_state();
                         end
                         
+                        
+                        
                         %% FORCES DISPLAY AND FILES
                         display_forces_and_write();
                         %% PLOTS
