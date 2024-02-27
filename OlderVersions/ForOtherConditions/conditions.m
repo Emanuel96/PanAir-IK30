@@ -1,0 +1,64 @@
+
+%% SIMULATION PARAMETERS
+vis = 1.7894e-5;
+rho = 1.225;
+% AERODYNAMIC CHORD
+chord = 1;
+
+% ANGLE OF ATTACK
+meanAoA = 0*pi/180;
+%meanAoA = [0 2.5 5 7.5 10]'*pi/180;
+% REYNOLDS NUMBER
+Re = 1e4;
+%Re = [1e4]';
+% NONDIMENSIONAL AMPLITUDE
+NonDimAmpl = 0.0;
+%NonDimAmpl = [0.05 0.1 0.2 0.4 0.8 1.6 3.2]';
+% REDUCED FREQUENCY
+RedFreq = 0.0;
+%RedFreq = [0.25]';
+% PITCHING AMPLITUDE
+PitchAmp = -0*pi/180;
+%PitchAmp = -[0 2.5 5 7.5 10]'*pi/180;
+% PHASE
+phase = 0*pi/180;
+% PIVOT (CHORD PERCENTAGE)
+pivot = 0.30;
+% ONLY LEADING EDGE?
+onlyLE = 0; % 0 - STANDARD FLAPPING | 1 - LEADING-EDGE |
+smoother = 117.7;
+% ASYMMETRY OF KINEMATICS
+zeta = 0.5;
+% ANIMATION ?
+animation = 0;
+% SAVE DATA?
+save_data = 1;
+
+% ALPHA_eff_RATE
+alpha_rate = 0.10;
+alpha_amp = 10;
+% Plunge (1) or Pitch (2)?
+motion = 2;
+
+%% NUMERICAL PARAMETERS
+% DURATION 
+%DURATION = 10/(alpha_rate);
+DURATION = 50;
+% NUMBER OF TIMESTEPS
+NTS = 500;
+% TIMESTEP (seconds)
+dt = DURATION/NTS;
+% MAX NUMBER OF ITERATIONS PER TIMESTEP
+NITER = 100;
+% MAX NUMBER OF VORTICES
+NVs = NTS;
+% CONVERGENCE REPORT
+reportConvergence = 5;
+
+%% AIRFOIL DISCRETIZATION
+
+% NUMBER OF BOUNDARY POINTS (ODD NUMBER)
+N_P = 200;
+
+% CONDITION NUMBER
+cond_no = 1;

@@ -1,0 +1,9 @@
+%THRUST COEFFICIENT (WITH VISCOUS CORRECTION)
+% CT = -CD;
+% %POWER COEFFICIENT
+% plungingP = -PLUNG_VEL.*CL/V_mag;
+% %CM = -CM; %VERIFY THIS
+% pitchingP = -ROT.*CM*chord/V_mag;
+% CPR = plungingP+pitchingP;
+% %PROPULSIVE EFFICIENCY
+% ETA = mean(CT(NTS-NTSPP:NTS))/mean(CPR(NTS-NTSPP:NTS));
