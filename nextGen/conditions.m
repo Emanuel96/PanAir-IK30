@@ -19,11 +19,11 @@ NonDimAmpl = [1]';
 % REDUCED FREQUENCY
 %Strouhal = 0.05;
 %RedFreq = pi*Strouhal./NonDimAmpl;
-alpha_induced = 20;
+alpha_induced = 45;
 RedFreq = tand(alpha_induced)./NonDimAmpl;
 %RedFreq = [0.05 0.1 0.2 0.4]';
 % PITCHING AMPLITUDE
-PitchAmp = -[0]'*pi/180;
+PitchAmp = -[45]'*pi/180;
 %PitchAmp = -[0:5:alpha_induced]'*pi/180;
 % PHASE
 phase = 0*pi/180;

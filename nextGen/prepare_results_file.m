@@ -2,6 +2,9 @@
 % WAKE VORTICES FILES
 %fid = fopen('Wake_Results.dat','w');
 
+folder_name = sprintf('Results/Re_%0.0f_h%0.3f_k%0.2f_A%0.2f',Re(iRe),NonDimAmpl(iNonDimAmpl),RedFreq(iRedFreq),-PitchAmp(iA_alpha)*180/pi);
+mkdir(folder_name);
+
 condition = sprintf('Re_%0.0f_h%0.3f_k%0.2f_A%0.2f',Re(iRe),NonDimAmpl(iNonDimAmpl),RedFreq(iRedFreq),-PitchAmp(iA_alpha)*180/pi);
 
 fid = fopen(strcat(folder_name,'/wake.dat'),'w');

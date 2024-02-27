@@ -14,8 +14,6 @@ else
     
     %% READ KINEMATICS FROM THE kinematics FOLDER
     
-    
-    
 end
 
 %% PLUNGING

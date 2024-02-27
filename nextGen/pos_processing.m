@@ -20,10 +20,10 @@ Re = 1e4;
 
 % NONDIMENSIONAL AMPLITUDE
 %NonDimAmpl = 0.0;
-NonDimAmpl = [0.05]';
+NonDimAmpl = [1]';
 % REDUCED FREQUENCY
 %RedFreq = 1;
-RedFreq = [0.25]';
+RedFreq = [0.36]';
 % PITCHING AMPLITUDE
 PitchAmp = -0*pi/180;
 %PitchAmp = -[0 2.5 5 7.5 10]'*pi/180;
@@ -59,6 +59,26 @@ for iRe = 1:size(Re)
                         xlabel('$t/T$','interpreter','latex','fontsize',15);
                         ylabel('$C_l$','interpreter','latex','fontsize',15,'rotation',0);
                         hold on;
+                        
+                        %% PROPULSIVE CHARACTERISTICS
+                        
+%                         CT = -CD;
+%                         %POWER COEFFICIENT
+%                         plungingP = -PLUNG_VEL.*CL/V_mag;
+%                         %CM = -CM; %VERIFY THIS
+%                         pitchingP = -ROT.*(-CM)*chord/V_mag;
+%                         CPR = plungingP+pitchingP;
+%                         
+%                         % MEAN DRAG
+%                         meanCPP = -mean(CD(k-NTSPP:k));
+%                         % MEAN LIFT
+%                         meanCPR = mean(CPR(k-NTSPP:k));
+%                         % EFFICIENCY
+%                         ETA = meanCPP/meanCPR;
+%                         
+%                         %fprintf('Timestep: %3d | meanCPP: %2.5f | meanCPR: %2.5f | ETA: %2.5f\n',k,meanCPP,meanCPR,ETA);
+%                         fprintf('Timestep %3d completed\n',k);
+                        
                         
                     end
                 end
