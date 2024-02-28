@@ -29,17 +29,22 @@ for i = 1:N
 end
 
 % DEFLECTION IN BODY AXIS (ONLY PITCHING)
+
 for i = 1:N+1
-    if onlyLE == 0
-        pos = alpha_pos(k);
-        x(i) = x_wd(i)*cos(pos)-y_wd(i)*sin(pos);
-        y(i) = x_wd(i)*sin(pos)+y_wd(i)*cos(pos);
-    elseif onlyLE == 1
-        pos = AMP_AL/(1+exp(smoother*(x_wd(i)/chord)))*alpha_pos(k);
-        x(i) = x_wd(i)*cos(pos)-y_wd(i)*sin(pos);
-        y(i) = x_wd(i)*sin(pos)+y_wd(i)*cos(pos);
-    end
+    pos = alpha_pos(k);
+    x(i) = x_wd(i)*cos(pos)-y_wd(i)*sin(pos);
+    y(i) = x_wd(i)*sin(pos)+y_wd(i)*cos(pos);
 end
+
+%         
+%             if onlyLE == 0
+%                 
+%             elseif onlyLE == 1
+%                 pos = AMP_AL/(1+exp(smoother*(x_wd(i)/chord)))*alpha_pos(k);
+%                 x(i) = x_wd(i)*cos(pos)-y_wd(i)*sin(pos);
+%                 y(i) = x_wd(i)*sin(pos)+y_wd(i)*cos(pos);
+%             end
+%         end
 
 % EFFECTIVE ANGLE OF ATTACK
 

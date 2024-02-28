@@ -8,7 +8,7 @@ if read_kinematics == 0
     
     %% PITCHING
     % SINUSOIDAL PITCHING
-    alpha_pos = AMP_AL*sin(2*pi*1/NTSPP*[1:NTS]);
+    alpha_pos = 0*AMP_AL*sin(2*pi*1/NTSPP*[1:NTS]);
     alpha_dot = gradient(alpha_pos,dt);
 else
     % READ KINEMATICS FROM THE kinematics FOLDER
