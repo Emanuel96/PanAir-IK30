@@ -15,9 +15,9 @@ freq = RedFreq*V_mag/(2*pi*chord);
 T = 1/freq;
 
 % TIME STEP CALCULATION (IN SECONDS)
-%dt = (1/freq)/NTSPP;
+dt = (1/freq)/NTSPP;
 
-dt = 0.1;
+%dt = 0.1;
 
 %fprintf('======= CURRENT CONDITION =======\n');
 %fprintf('Re: %0.2f (U = %f m/s) | k: %2.3f (f = %f Hz) | h: %2.3f | A: %2.3f\n',Re(iRe),V_mag,RedFreq(iRedFreq),freq,NonDimAmpl(iNonDimAmpl),-PitchAmp(iA_alpha)*180/pi);

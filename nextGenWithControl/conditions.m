@@ -20,7 +20,7 @@ NonDimAmpl = [0]';
 %Strouhal = 0.05;
 %RedFreq = pi*Strouhal./NonDimAmpl;
 alpha_induced = 45;
-RedFreq = 0.05;
+RedFreq = 0.5;
 %RedFreq = tand(alpha_induced)./NonDimAmpl;
 %RedFreq = [0.05 0.1 0.2 0.4]';
 % PITCHING AMPLITUDE

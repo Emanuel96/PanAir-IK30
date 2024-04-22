@@ -1,5 +1,8 @@
 
+if rem(k,10) == 0
+
 if animation == 1
+    
     
 
     plot(x/chord,y/chord,'*','LineWidth',1);
@@ -28,4 +31,6 @@ if animation == 1
     %scatter(x,y,10);
     %plot(XZ,YZ,'o');
     
+end
+
 end

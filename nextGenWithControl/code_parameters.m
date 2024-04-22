@@ -4,7 +4,7 @@
 % KINEMATICS
 read_kinematics = 0;
 % ANIMATION ?
-animation = 0;
+animation = 1;
 % SAVE DATA?
 save_data = 0;
 
@@ -18,7 +18,7 @@ NPs = 5;
 % NUMBER OF TIME STEPS PER PERIOD
 NTSPP = 100;
 % NUMBER OF TIMESTEPS
-NTS = 500; % NPs*NTSPP;
+NTS = 1000; % NPs*NTSPP;
 % MAX NUMBER OF ITERATIONS PER TIMESTEP
 NITER = 100;
 % MAX NUMBER OF VORTICES
