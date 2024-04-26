@@ -6,7 +6,7 @@ read_kinematics = 0;
 % ANIMATION ?
 animation = 0;
 % SAVE DATA?
-save_data = 0;
+save_data = 1;
 
 %% AIRFOIL DISCRETIZATION
 % NUMBER OF BOUNDARY POINTS (ODD NUMBER)

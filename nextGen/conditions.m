@@ -13,17 +13,17 @@ chord = 0.20;
 % ANGLE OF ATTACK
 meanAoA = [0]'*pi/180;
 % REYNOLDS NUMBER
-Re = [1e4]';
+Re = [1e5]';
 % NONDIMENSIONAL AMPLITUDE
-NonDimAmpl = [1]';
+NonDimAmpl = [0.5]';
 % REDUCED FREQUENCY
 %Strouhal = 0.05;
 %RedFreq = pi*Strouhal./NonDimAmpl;
-alpha_induced = 45;
+alpha_induced = 10;
 RedFreq = tand(alpha_induced)./NonDimAmpl;
 %RedFreq = [0.05 0.1 0.2 0.4]';
 % PITCHING AMPLITUDE
-PitchAmp = -[45]'*pi/180;
+PitchAmp = -[5]'*pi/180;
 %PitchAmp = -[0:5:alpha_induced]'*pi/180;
 % PHASE
 phase = 0*pi/180;
@@ -34,3 +34,10 @@ onlyLE = 0; % 0 - STANDARD FLAPPING | 1 - LEADING-EDGE |
 smoother = 117.7;
 % ASYMMETRY OF KINEMATICS
 zeta = 0.5;
+
+% LAMBDA (PITCHING NONSINUSOIDAL)
+lambda = [0]';
+
+
+
+

@@ -1,5 +1,5 @@
 %% UNSTEADY HSPM by Komasho (Based on TENG)
-%  Last Update: September 26th, 2023 by Emanuel Camacho
+%  Last Update: April 22th, 2024 by Emanuel Camacho
 
 %% !!! CAUTION !!!
 % PLEASE BE CAREFUL ABOUT THE REDUCED FREQUENCY DEFINITION
@@ -23,52 +23,52 @@ for iRe = 1:size(Re)
             for iRedFreq = 1:size(RedFreq)
                 for iA_alpha = 1:size(PitchAmp)
                     for iZeta = 1:size(zeta)
-                        
-                        %% DIMENSIONAL PARAMETERS
-                        simulation();
-                        %% AIRFOIL DATA (COORDINATES)
-                        geometry();
-                        %% RESULTS FILE
-                        prepare_results_file();
-                        %% INITIALIZE VARIABLES
-                        init();
-                        %% FIND STEADY SOLUTION
-                        calc_steady();
-                        %% PRECOMPUTATION OF KINEMATICS
-                        precomputed_kinematics();
-                        
-                        %% START OF TRANSIENT CALCULATION
-                        for k = 1:NTS
-                            %% KINEMATICS
-                            kinematics();
-                            %% GEOMETRIC PARAMETERS OF THE AIRFOIL
-                            update_geometry();
-                            %% STREAM VELOCITY AND VORTEX CONVECTION
-                            calc_velocity_and_vortex_transport();
-                            %% ITERATIVE PROCEDURE TO CALCULATE WAKE ELEMENT
-                            find_wake_element_with_kutta();
-                            %% COMPUTE AERODYNAMIC COEFFICIENTS COEFFICIENTS
-                            compute_aero_coefficients();
-                            %% DEATTACH TRAILING-EDGE PANEL AND CREATE CORE VORTEX
-                            shed_vortex();
-                            %% DATA FOR TECPLOT
-                            data_for_tecplot();
-                            %% ANIMATIONS
-                            animations();
-                            %% SHOW CURRENT STATE
-                            simulation_state();
+                        for iLambda = 1:size(lambda)
+                            
+                            %% DIMENSIONAL PARAMETERS
+                            simulation();
+                            %% AIRFOIL DATA (COORDINATES)
+                            geometry();
+                            %% RESULTS FILE
+                            prepare_results_file();
+                            %% INITIALIZE VARIABLES
+                            init();
+                            %% FIND STEADY SOLUTION
+                            calc_steady();
+                            %% PRECOMPUTATION OF KINEMATICS
+                            precomputed_kinematics();
+                            
+                            %% START OF TRANSIENT CALCULATION
+                            for k = 1:NTS
+                                %% KINEMATICS
+                                kinematics();
+                                %% GEOMETRIC PARAMETERS OF THE AIRFOIL
+                                update_geometry();
+                                %% STREAM VELOCITY AND VORTEX CONVECTION
+                                calc_velocity_and_vortex_transport();
+                                %% ITERATIVE PROCEDURE TO CALCULATE WAKE ELEMENT
+                                find_wake_element_with_kutta();
+                                %% COMPUTE AERODYNAMIC COEFFICIENTS COEFFICIENTS
+                                compute_aero_coefficients();
+                                %% DEATTACH TRAILING-EDGE PANEL AND CREATE CORE VORTEX
+                                shed_vortex();
+                                %% DATA FOR TECPLOT
+                                data_for_tecplot();
+                                %% ANIMATIONS
+                                animations();
+                                %% SHOW CURRENT STATE
+                                simulation_state();
+                            end
+                            
+                            %% FORCES DISPLAY AND FILES
+                            display_forces_and_write();
+                            %% PLOTS
+                            plots();
+                            
+                            %% CLOSE FILES
+                            fclose(fid);
+                            fclose(fvec);
                         end
-                        
-                        
-                        
-                        %% FORCES DISPLAY AND FILES
-                        display_forces_and_write();
-                        %% PLOTS
-                        plots();
-                        
-                        %% CLOSE FILES
-                        fclose(fid);
-                        fclose(fvec);
                     end
                 end
             end

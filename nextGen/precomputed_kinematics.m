@@ -8,8 +8,16 @@ if read_kinematics == 0
     
     %% PITCHING
     % SINUSOIDAL PITCHING
-    alpha_pos = AMP_AL*sin(2*pi*1/NTSPP*[1:NTS]);
-    alpha_dot = gradient(alpha_pos,dt);
+    
+    if lambda(iLambda) == 0
+        alpha_pos = AMP_AL*sin(2*pi*1/NTSPP*[1:NTS]);
+        alpha_dot = gradient(alpha_pos,dt);
+    else
+        % NONSINUSOIDAL PITCHING
+        alpha_pos = AMP_AL*tanh(lambda(iLambda)*sin(2*pi*1/NTSPP*[1:NTS]))/tanh(lambda(iLambda));
+        alpha_dot = gradient(alpha_pos,dt);
+    end
+    
 else
     % READ KINEMATICS FROM THE kinematics FOLDER
 end
